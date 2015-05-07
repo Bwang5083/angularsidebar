@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
     concurrent: {
       devel: {
-        tasks: ['connect:www', 'watch'],
+        tasks: ['connect:demo', 'watch'],
         options: {
           limit: 2,
           logConcurrentOutput: true
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      dev: ['tmp', 'dist', 'www/assets']
+      dev: ['tmp', 'dist', 'demo/assets']
     },
 
     copy: {
@@ -113,11 +113,11 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      www: {
+      demo: {
         options: {
           hostname: '0.0.0.0',
           port: 3000,
-          base: ['.', 'www'],
+          base: ['.', 'demo'],
           keepalive: true
         }
       },
