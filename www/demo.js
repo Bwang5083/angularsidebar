@@ -194,7 +194,7 @@ app.controller('MainController', function($rootScope, $scope){
 
   // Needed for the loading screen
   $rootScope.$on('$routeChangeStart', function(){
-    $rootScope.loading = true;
+    $rootScope.loading = false;
   });
 
   $rootScope.$on('$routeChangeSuccess', function(){
