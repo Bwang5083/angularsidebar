@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="">
+
+<head>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/site.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        var maxtime = 60 * 60;
+        var staticTimer = 0;
+
+        function CountDown() {
+            if (maxtime >= 0) {
+                minutes = Math.floor(maxtime / 60);
+                seconds = Math.floor(maxtime % 60);
+                msg = "Clock: " + minutes + ":" + seconds;
+                document.all["timer"].innerHTML = msg;
+                --maxtime;
+                window.name = maxtime;
+            }
+        };
+
+        $(document).ready(function () {
+            //unbind mouse events at beginning, so player can't play game unless clicking Go button to bind all mouse event with game section
+            unBindEvents();
+
+            function StartTimer() {
+                //the clock drop one second
+                timer = setInterval("CountDown()", 1000);
+            };
+
+            $('#start-game').click(function () {
+                //reset the total time every time
+                maxtime = 60 * 60;
+                Clear();
+                //run setInterval function for one time only
+                if(staticTimer == 0)
+                {
+                    staticTimer++;
+                    StartTimer();
+                    //bind mouse events with game to make pictures clickable, then player can start playing
+                    bindEvent();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body ng-controller="userController">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-nav"><span><a class="navbar-brand" href="game.html">Memory</a></span>
+                </div>
+                <div class="navbar-nav"><span><a class="navbar-brand" href="index.html">Users</a></span>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse" id="navigationbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="game.html">Game</a>
+                    </li>
+                    <li><a href="index.html">Users</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </div>
+
+    <div id="game-section">
+        <div id="game-left">
+            <button id="start-game" type="button" class="btn btn-info btn-lg">Go</button>
+            <div id="timer">Clock: 60:00</div>
+            <div id="rules">
+                <h4>Rules</h4>
+                <p>
+                    This is a game designed for memory training. Turn on a picture, then turn on another. If these two pictures match each other, you win one score. Otherwise, these two pictures will turn back within one second.
+                </p>
+            </div>
+        </div>
+        <div id="game-pic">
+            <a href="#">
+                <img src="images/0.jpg" name="pic1" id="pic1" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic2" id="pic2" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic3" id="pic3" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic4" id="pic4" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic5" id="pic5" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <br>
+            <a href="#">
+                <img src="images/0.jpg" name="pic6" id="pic6" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic7" id="pic7" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic8" id="pic8" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic9" id="pic9" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic10" id="pic10" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <br>
+            <a href="#">
+                <img src="images/0.jpg" name="pic11" id="pic11" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic12" id="pic12" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic13" id="pic13" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic14" id="pic14" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic15" id="pic15" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <br>
+            <a href="#">
+                <img src="images/0.jpg" name="pic16" id="pic16" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic17" id="pic17" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic18" id="pic18" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic19" id="pic19" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+            <a href="#">
+                <img src="images/0.jpg" name="pic20" id="pic20" width="70" height="70" alt="lips makeup" title="click me" />
+            </a>
+        </div>
+        <div id="game-right">
+            <img src="images/yellowman.jpg" name="scorepic" width="70" height="70" />
+            <h1>Score:</h1>
+            <h2 id="score">0</h2>
+        </div>
+    </div>
+    <footer>
+        &copy; 2014. <a href="http://www.conestogac.on.ca/">Conestoga College</a>. All Rights Reserved. <a href="mailto:Bwang5083@conestogac.on.ca">Email</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script>
+        jQuery("document").ready(function () {
+            jQuery(".nav-tabs a").click(function () {
+                jQuery("#newsstory").load(this.name + ".html");
+                jQuery(".active").removeClass("active");
+                jQuery(this).parent().addClass("active");
+            });
+        });
+    </script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.15/angular.min.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
