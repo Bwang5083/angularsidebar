@@ -28,11 +28,11 @@
     >
 
     <!-- Sidebars -->
-    <div ng-include src="'../views/sidebar.html'"
+    <div ng-view ng-include src="'../views/sidebar.html'"
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
-    <div ng-include src="'../views/sidebarRight.html'"
+    <div ng-view ng-include src="'../views/sidebarRight.html'"
             class="sidebar sidebar-right"></div>
 
     <div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
@@ -69,7 +69,7 @@
           <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
         <div class="app-content">
-          <ng-view></ng-view>
+          <!--ng-view></ng-view-->
         </div>
       </div>
 
