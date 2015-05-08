@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="css/mobile-angular-ui-base.min.css" />
     <link rel="stylesheet" href="css/mobile-angular-ui-desktop.min.css" />
     <link rel="stylesheet" href="demo.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.min.js"></script>
+    <!--script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script-->
+    <!--script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.min.js"></script>
     <script src="js/mobile-angular-ui.min.js"></script>
     <!-- Required to use $swipe, $drag and Translate services -->
     <script src="js/mobile-angular-ui.gestures.min.js"></script>
@@ -28,11 +30,11 @@
     >
 
     <!-- Sidebars -->
-    <div ng-view ng-include src="'../views/sidebar.html'"
+    <div ng-include="'sidebar.html'"
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
-    <div ng-view ng-include src="'../views/sidebarRight.html'"
+    <div ng-include="'sidebarRight.html'"
             class="sidebar sidebar-right"></div>
 
     <div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
@@ -69,7 +71,7 @@
           <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
         <div class="app-content">
-          <!--ng-view></ng-view-->
+          <ng-view></ng-view>
         </div>
       </div>
 
