@@ -198,7 +198,7 @@ app.controller('MainController', function($rootScope, $scope){
   });
 
   $rootScope.$on('$routeChangeSuccess', function(){
-    $rootScope.loading = true;
+    $rootScope.loading = false;
   });
 
   // Fake text i used here and there.
